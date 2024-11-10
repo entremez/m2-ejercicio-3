@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
 
+
+$primary: rgb(29, 117, 189);
+$secondary: #27aae2;
+$active_color_background : #c7c6c6;
+$active_color_font : #000000;
+
 // 1. Vendors
 @import 'vendors/normalize';
 @import "vendors/bootstrap/scss/bootstrap.scss";
@@ -19,6 +25,9 @@
 
 // 5. Pages
 @import 'pages/home';
+@import 'pages/header';
+@import 'pages/team';
+@import 'pages/contact';
 
 // 6. Themes
 @import 'themes/default';
