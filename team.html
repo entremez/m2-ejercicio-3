@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/scripts.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <title>TEAM</title>
   </head>
@@ -14,7 +15,7 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img class="d-block mx-auto mb-4" src="images/logo.jpg" alt="" width="80"></a>
+        <a class="navbar-brand" href="#"><img class="d-block mx-auto mb-4" src="images/logo.jpg" alt="" width="80" onclick="logo()"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,38 +52,7 @@
     <div class="album py-5 bg-body-tertiary">
       <div class="container">
   
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <img class="img-fluid" src="images/equipo2.jpg" alt="Equipo 1" height="225">
-              <div class="card-body">
-                <p class="card-text">Nombre Apellido 1</p>
-                <p class="card-text">Especialidad 1</p>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero recusandae nulla necessitatibus repellendus officia reiciendis delectus nisi doloremque ab. Nobis veniam non saepe necessitatibus quaerat aut consequatur ipsa nihil commodi.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <img class="img-fluid" src="images/equipo1.jpg" alt="Equipo 2" height="225">
-              <div class="card-body">
-                <p class="card-text">Nombre Apellido 2</p>
-                <p class="card-text">Especialidad 2</p>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero recusandae nulla necessitatibus repellendus officia reiciendis delectus nisi doloremque ab. Nobis veniam non saepe necessitatibus quaerat aut consequatur ipsa nihil commodi.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <img class="img-fluid" src="images/equipo2.jpg" alt="Equipo 3" height="225">
-              <div class="card-body">
-                <p class="card-text">Nombre Apellido 3</p>
-                <p class="card-text">Especialidad 3</p>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero recusandae nulla necessitatibus repellendus officia reiciendis delectus nisi doloremque ab. Nobis veniam non saepe necessitatibus quaerat aut consequatur ipsa nihil commodi.</p>
-              </div>
-            </div>
-          </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="doctors">
 
 
         </div>
