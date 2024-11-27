@@ -39,16 +39,28 @@ function validarEmail(email) {
     return regex.test(email);
 }
 
-  
-    try {
-        let out = "";
-        fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json()) 
-    .then(data => 
-        data.forEach(doctor => {
-            console.log(doctor);
 
-        const elem = document.getElementById("doctors").innerHTML +=`
+async function getData(input) {
+    const url = "https://jsonplaceholder.typicode.com/users";
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+      document.getElementById("doctors").innerHTML = '';
+      const doctors = await response.json();
+      const clones =  Object.values({ ...doctors });
+      entrada = null;
+
+      if(input){
+         entrada = clones.sort((a, b) => (a.name > b.name ? 1 : -1));;
+      }else{
+         entrada = doctors;
+      }
+      
+      texto = "";
+      entrada.forEach(doctor => {
+        texto += `
         <div class="col">
         <div class="card shadow-sm">
           <img class="img-fluid" src="https://picsum.photos/id/`+doctor.id+`/200/300" alt="Equipo 3" height="225">
@@ -60,24 +72,26 @@ function validarEmail(email) {
           </div>
         </div>
         </div>`;
-        }));
+      });
+      console.log(entrada);
+      document.getElementById("doctors").innerHTML = texto;
     } catch (error) {
-        console.log(error);
+      console.error(error.message);
     }
+  }
 
+getData(false);
+localStorage.setItem('last', "false");
 
-    /**
-async function getData(){
-  const response = await fetch("URL");
-  const data = await response.json();
-  return data;
+function order(){
+    last = localStorage.getItem("last");    
+    if(last == "false"){
+        localStorage.setItem('last', "true");
+        getData(true);
+    }else{
+        localStorage.setItem('last', "false");
+        getData(false);
+    }
 }
 
-function doSomething(data) {
-  // here you do something with data
-  console.log(data)
-}
-
-getData().then(doSomething)
-     */
 
